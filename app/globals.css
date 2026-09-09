@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --teal: #0FCFA4;
+  --blue: #1E63E9;
+  --ink: #10161C;
+  --gray: #5B6570;
+  --line: #E4E8EC;
+  --bg-soft: #F6F8FA;
+}
+
+html.dark {
+  --ink: #EAF1F7;
+  --gray: #9AA7B5;
+  --line: #232B34;
+  --bg-soft: #161D24;
+}
+
+body {
+  font-family: 'Inter', -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp { animation: fadeUp 0.35s ease; }
+
+@media print {
+  .no-print, aside, header nav { display: none !important; }
+  body { background: #fff; }
+}
